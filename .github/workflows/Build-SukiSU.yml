@@ -6,7 +6,7 @@ on:
         type: choice
         description: "分支"
         required: true
-        default: sm8550
+        default: sm8650
         options:
           - sm7550
           - sm7675
@@ -19,7 +19,7 @@ on:
         type: choice
         description: "配置文件"
         required: true
-        default: oneplus_ace2pro_v
+        default: oneplus12_v
         options:
           - oneplus_nord_ce4_v
           - oneplus_ace_3v_v
@@ -46,7 +46,7 @@ on:
         type: choice
         description: "处理器代号"
         required: true
-        default: kalama
+        default: pineapple
         options:
           - crow
           - waipio
@@ -57,7 +57,7 @@ on:
         type: choice
         description: "内核安卓版本"
         required: true
-        default: android13
+        default: android14
         options:
           - android12
           - android13
@@ -67,7 +67,7 @@ on:
        type: choice
        description: "内核版本"
        required: true
-       default: "5.15"
+       default: "6.1"
        options:
          - "5.10"
          - "5.15"
@@ -289,11 +289,11 @@ jobs:
           CONFIG_FILE=./common/arch/arm64/configs/gki_defconfig
 
             if [ "${{ github.event.inputs.KERNEL_VERSION }}" = "5.10" ]; then
-              echo "CONFIG_ZSMALLOC=y" >> "$CONFIG_FILE"
-              echo "CONFIG_ZRAM=y" >> "$CONFIG_FILE"
-              echo "CONFIG_MODULE_SIG=n" >> "$CONFIG_FILE"
-              echo "CONFIG_CRYPTO_LZO=y" >> "$CONFIG_FILE"
-              echo "CONFIG_ZRAM_DEF_COMP_LZ4KD=y" >> "$CONFIG_FILE"
+          echo "CONFIG_ZSMALLOC=y" >> "$CONFIG_FILE"
+          echo "CONFIG_ZRAM=y" >> "$CONFIG_FILE"
+          echo "CONFIG_MODULE_SIG=n" >> "$CONFIG_FILE"
+          echo "CONFIG_CRYPTO_LZO=y" >> "$CONFIG_FILE"
+          echo "CONFIG_ZRAM_DEF_COMP_LZ4KD=y" >> "$CONFIG_FILE"
             fi
 
 
